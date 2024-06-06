@@ -46,7 +46,7 @@ vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
     </nav>
     {{ $slot }}
     <footer>
-      <hr />
+      <hr/>
       © 2024 Andrea Pellissari
     </footer>
   </body>
@@ -54,13 +54,7 @@ vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
 
 A função slot define para onde passar o conteúdo principal sempre que você estender o componente de layout. {{ $slot }}
 Para estender o layout, abra o arquivo padrão resources/views/nova.blade.php e substitua o conteúdo do arquivo por este código: <x-component-name>
-<x-layout>
-  <div>
-	<h1>Olá!!</h1>
-	<p>Sejam bem-vindos!!</p>
-    <button class="btn">Vamos iniciar</button>
-  </div>
-</x-layout>
+
 
 <x-layout>
   <x-slot name="title">

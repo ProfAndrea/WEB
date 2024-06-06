@@ -1,3 +1,17 @@
-<div>
-    <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
-</div>
+<html>
+  <head>
+    <title>{{ $title }}</title>
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+  </head>
+  <body>
+    <nav> 
+      <h3>Bem vindo ao meu site</h3>
+      <hr>
+    </nav>
+    {{ $slot }}
+    <footer>
+      <hr/>
+      © 2024 Andrea Pellissari
+    </footer>
+  </body>
+</html>

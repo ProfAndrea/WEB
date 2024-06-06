@@ -4,7 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('Arsha.index');
+    return view('aulaweb');
+});
+
+Route::get('/teste', function () {
+    return view('lp');
 });
 
 Route::get('/dashboard', function () {
