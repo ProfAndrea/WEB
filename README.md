@@ -123,3 +123,47 @@ Route::get('/', function () {
   Olá, {{ $name }}
  
 </div>
+
+
+# Formulários
+
+<form action="{{ route('produto.store')}}" method="POST">
+    @csrf
+
+    <label>Nome: </label>
+    <input type="text" name="nome" id="nome" placeholder="Nome do produto" required><br><br>
+
+    <label>Valor: </label>
+    <input type="text" name="valor" id="valor" placeholder="Usar '.' separar real do centavo" required><br><br>
+
+    <label>descrição: </label>
+    <input type="date" name="vencimento" id="vencimento" required><br><br>
+    
+    <button type="submit">Cadastrar</button>
+
+</form>
+
+
+Necessário criar a rota no arquivo "routes/web.php".
+
+Route::post('/cadastrarProduto', [ProdutoController::class, 'store'])->name('produto.store');
+
+public function store(Request $request)
+{
+    // Cadastrar no banco de dados na tabela produtos os valores de todos os campos
+    Produto::create($request->all());
+
+    // Redirecionar o usuário, enviar a mensagem de sucesso
+    return redirect()->route('produto.show')->with('success', 'Produto cadastrado com sucesso');
+}
+
+
+Na view de visualizar, "resources/views/produtos/show.blade.php", é implementada a funcionalidade para apresentar a mensagem de sucesso enviada pela controller ao cadastrar no banco de dados.
+
+
+{{-- Verificar se existe a sessão success e imprimir o valor --}}
+@if (session('success'))
+    <span style="color: #082;">
+        {{ session('success') }}
+    </span>
+@endif
