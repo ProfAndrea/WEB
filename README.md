@@ -29,9 +29,23 @@ vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
        nome.blade.php
 
     #Routes - rotas - fluxos da aplicação
+    $variavel= valor    return view('nomeView', ['variavel'=>$variavel]);
      com/sem parâmetros ( enviar/ receber dados )
+     blade{{$variavel}}( variavel é a chave da array)
 
-     Componentes do layout
+# Blades
+ Principal.blade
+  @yield('conteudo')
+  
+  @extends('principal')
+@section('conteudo')
+    <h2>Título da postagem</h2>
+    <p> Lorem ipsum dolor sit amet (...) </p>
+@stop
+
+
+
+# Componentes do layout
      php artisan make:component Layout
 
    <html>
